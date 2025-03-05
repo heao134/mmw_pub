@@ -1,0 +1,3 @@
+vue create research-team-website
+cd research-team-website
+npm install vue-router@3.x vuex@3.x element-ui axios 
