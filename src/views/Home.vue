@@ -5,12 +5,16 @@
     </div>
     
     <div class="waterfall-wrapper" ref="waterfallWrapper">
-      <div class="waterfall-column" v-for="(column, columnIndex) in columns" :key="columnIndex">
+      <div 
+        class="waterfall-column" 
+        v-for="(column, columnIndex) in columns" 
+        :key="'column-' + columnIndex"
+      >
         <div 
           v-for="item in column" 
-          :key="item.id" 
+          :key="'item-' + item.id" 
           class="waterfall-item"
-          :class="{ 'fade-in': item.visible }"
+          :class="{ 'fade-in': true }"
         >
           <div class="waterfall-image">
             <img :src="item.image" :alt="item.title">
@@ -42,18 +46,16 @@ export default {
       loading: false,
       columnCount: 3,
       page: 1,
-      columns: [],
+      columns: [[], [], []],
       observer: null
     };
   },
-  mounted() {
-    this.initializeLayout();
-    this.loadItems();
+  async mounted() {
+    await this.initializeLayout();
+    await this.loadItems();
     
-    // Set up intersection observer for infinite scrolling
     this.setupInfiniteScroll();
     
-    // Handle window resize
     window.addEventListener('resize', this.handleResize);
   },
   beforeDestroy() {
@@ -63,8 +65,7 @@ export default {
     }
   },
   methods: {
-    initializeLayout() {
-      // Determine column count based on screen width
+    async initializeLayout() {
       if (window.innerWidth < 768) {
         this.columnCount = 1;
       } else if (window.innerWidth < 1024) {
@@ -73,14 +74,12 @@ export default {
         this.columnCount = 3;
       }
       
-      // Initialize empty columns
       this.columns = Array(this.columnCount).fill().map(() => []);
     },
     
     handleResize() {
       const oldColumnCount = this.columnCount;
       
-      // Update column count based on new screen width
       if (window.innerWidth < 768) {
         this.columnCount = 1;
       } else if (window.innerWidth < 1024) {
@@ -89,20 +88,16 @@ export default {
         this.columnCount = 3;
       }
       
-      // Only redistribute items if column count changed
       if (oldColumnCount !== this.columnCount) {
         this.redistributeItems();
       }
     },
     
     redistributeItems() {
-      // Flatten all columns into a single array
       const allItems = this.columns.reduce((acc, column) => [...acc, ...column], []);
       
-      // Reset columns with new count
       this.columns = Array(this.columnCount).fill().map(() => []);
       
-      // Redistribute all items
       allItems.forEach(item => {
         const shortestColumnIndex = this.getShortestColumnIndex();
         this.columns[shortestColumnIndex].push(item);
@@ -110,7 +105,6 @@ export default {
     },
     
     getShortestColumnIndex() {
-      // Find the column with the fewest items
       let shortestIndex = 0;
       let shortestLength = this.columns[0].length;
       
@@ -124,74 +118,90 @@ export default {
       return shortestIndex;
     },
     
-    loadItems() {
+    async loadItems() {
       if (this.loading) return;
       
       this.loading = true;
       
-      // Simulate API call with setTimeout
-      setTimeout(() => {
-        // Generate mock data
+      try {
         const newItems = this.generateMockItems(10);
         
-        // Add new items to columns
         newItems.forEach(item => {
           const shortestColumnIndex = this.getShortestColumnIndex();
-          this.columns[shortestColumnIndex].push(item);
+          if (this.columns[shortestColumnIndex]) {
+            this.columns[shortestColumnIndex].push({
+              ...item,
+              visible: true
+            });
+          }
         });
         
-        this.loading = false;
         this.page++;
-      }, 1000);
+      } catch (error) {
+        console.error('Error loading items:', error);
+      } finally {
+        this.loading = false;
+      }
     },
     
     generateMockItems(count) {
       const items = [];
       const startId = (this.page - 1) * count + 1;
       
-      const titles = [
-        "Neural Networks for Signal Processing",
-        "Deep Learning Applications in Computer Vision",
-        "Generative Models for Audio Synthesis",
-        "Optimization Techniques in Machine Learning",
-        "Source Separation using Microphone Arrays",
-        "Diffusion Models for Image Generation",
-        "Latent Variable Models in NLP",
-        "Bayesian Optimization for Black-Box Functions",
-        "Sparse Representation in Signal Processing",
-        "Transformer Architectures for Time Series"
-      ];
-      
-      const summaries = [
-        "This paper explores a novel approach to optimize high-dimensional non-convex functions using advanced sampling techniques that exploit the curvature of the optimization landscape.",
-        "A new method for learning complex kernels that accurately model the structure of high-dimensional black-box functions, enabling efficient optimization.",
-        "This tutorial dives into the foundations of generative models like VAEs, GANs, and Diffusion models, explaining key principles and implementation details.",
-        "A human-centric black-box optimization approach that reveals information about the minimizer function to achieve lower query budgets in complex scenarios.",
-        "An innovative technique for underdetetermined source separation using microphone arrays that reduces delay aliasing between two interfaces.",
-        "This research presents a self-supervised speech enhancement method utilizing signals from multiple modalities to improve audio quality in noisy environments.",
-        "A sample-constrained Bayesian optimization technique using human-in-the-loop to solve high-dimensional problems in audio personalization applications.",
-        "A new efficient real-time wideband spectrum sensing mechanism leveraging recent advances in RF MEMS filtering for densely occupied spectrum.",
-        "An approach that enables better spatial acoustics on wearable devices by estimating personalized HRTFs using mobile sensors and machine learning.",
-        "A novel binaural source separation technique that improves audio quality for hearing aids and other wearable listening devices."
-      ];
-      
-      const dates = [
-        "April 2023", "February 2023", "December 2022", "October 2022", 
-        "August 2022", "June 2022", "May 2022", "March 2022", 
-        "January 2022", "November 2021"
+      const projectItems = [
+        {
+          id: 1,
+          title: "Neural Networks for Signal Processing",
+          summary: "This paper explores a novel approach to optimize high-dimensional non-convex functions using advanced sampling techniques that exploit the curvature of the optimization landscape.",
+          date: "April 2023",
+          color: '#3498db',
+          imageHeight: 200
+        },
+        {
+          id: 2,
+          title: "Deep Learning Applications in Computer Vision",
+          summary: "A new method for learning complex kernels that accurately model the structure of high-dimensional black-box functions, enabling efficient optimization.",
+          date: "February 2023",
+          color: '#e74c3c',
+          imageHeight: 250
+        },
+        {
+          id: 3,
+          title: "Generative Models for Audio Synthesis",
+          summary: "This tutorial dives into the foundations of generative models like VAEs, GANs, and Diffusion models, explaining key principles and implementation details.",
+          date: "December 2022",
+          color: '#2ecc71',
+          imageHeight: 300
+        },
+        {
+          id: 4,
+          title: "Optimization Techniques in Machine Learning",
+          summary: "A human-centric black-box optimization approach that reveals information about the minimizer function to achieve lower query budgets in complex scenarios.",
+          date: "October 2022",
+          color: '#f39c12',
+          imageHeight: 200
+        },
+        {
+          id: 5,
+          title: "Source Separation using Microphone Arrays",
+          summary: "An innovative technique for underdetetermined source separation using microphone arrays that reduces delay aliasing between two interfaces.",
+          date: "August 2022",
+          color: '#9b59b6',
+          imageHeight: 250
+        }
       ];
       
       for (let i = 0; i < count; i++) {
         const id = startId + i;
-        const colorIndex = id % 5;
-        const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6'];
+        const projectIndex = id % projectItems.length;
+        const project = projectItems[projectIndex];
         
         items.push({
-          id,
-          title: titles[id % titles.length],
-          summary: summaries[id % summaries.length],
-          image: `https://via.placeholder.com/400x${200 + (id % 3) * 50}/${colors[colorIndex].replace('#', '')}`,
-          date: dates[id % dates.length],
+          id: id,
+          title: project.title,
+          summary: project.summary,
+          image: `https://via.placeholder.com/400x${project.imageHeight}/${project.color.replace('#', '')}`,
+          date: project.date,
           visible: false
         });
       }
@@ -200,51 +210,21 @@ export default {
     },
     
     setupInfiniteScroll() {
-      // Create intersection observer to detect when user scrolls near bottom
       this.observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
+        if (entries[0].isIntersecting && !this.loading) {
           this.loadItems();
         }
       }, {
         root: null,
-        rootMargin: '200px',
+        rootMargin: '100px',
         threshold: 0.1
       });
       
-      // Observe the loading element
       this.$nextTick(() => {
         const loadingEl = document.querySelector('.loading');
         if (loadingEl) {
           this.observer.observe(loadingEl);
         }
-      });
-      
-      // Create another observer for fade-in animation
-      const animationObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Find the item and make it visible
-            this.columns.forEach(column => {
-              column.forEach(item => {
-                if (item.id.toString() === entry.target.getAttribute('data-id')) {
-                  item.visible = true;
-                }
-              });
-            });
-          }
-        });
-      }, {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      });
-      
-      // Observe all waterfall items
-      this.$nextTick(() => {
-        document.querySelectorAll('.waterfall-item').forEach(item => {
-          item.setAttribute('data-id', item.getAttribute('key'));
-          animationObserver.observe(item);
-        });
       });
     }
   }
