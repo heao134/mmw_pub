@@ -2,6 +2,7 @@
   <div class="waterfall-container">
     <div class="waterfall-header">
       <h1>Research Publications</h1>
+      <div class="header-underline"></div>
     </div>
     
     <div class="waterfall-wrapper" ref="waterfallWrapper">
@@ -18,12 +19,20 @@
         >
           <div class="waterfall-image">
             <img :src="item.image" :alt="item.title">
+            <div class="image-overlay">
+              <span class="view-details">View Details</span>
+            </div>
           </div>
           <div class="waterfall-content">
+            <div class="content-category"></div>
             <h3 class="waterfall-title">{{ item.title }}</h3>
             <p class="waterfall-summary">{{ item.summary }}</p>
             <div class="waterfall-footer">
               <span class="waterfall-date">{{ item.date }}</span>
+              <div class="waterfall-tags">
+                <span class="tag">AI</span>
+                <span class="tag">Research</span>
+              </div>
             </div>
           </div>
         </div>
@@ -32,7 +41,7 @@
     
     <div class="loading" v-if="loading">
       <div class="loading-spinner"></div>
-      <span>Loading more items...</span>
+      <span>Loading more publications...</span>
     </div>
   </div>
 </template>
@@ -126,6 +135,9 @@ export default {
       try {
         const newItems = this.generateMockItems(10);
         
+        // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 800));
+        
         newItems.forEach(item => {
           const shortestColumnIndex = this.getShortestColumnIndex();
           if (this.columns[shortestColumnIndex]) {
@@ -151,43 +163,75 @@ export default {
       const projectItems = [
         {
           id: 1,
-          title: "Neural Networks for Signal Processing",
-          summary: "This paper explores a novel approach to optimize high-dimensional non-convex functions using advanced sampling techniques that exploit the curvature of the optimization landscape.",
-          date: "April 2023",
+          title: "AirTac: Non-Contact Tactile Perception for Material and Roughness via Terahertz Sensing",
+          summary: "Proposes a terahertz-based system using M-Net and R-Net neural networks to decouple material and roughness features, achieving 97.43% accuracy in material classification and 91.46% in fine-grained roughness detection.",
+          date: "November 2024",
           color: '#3498db',
-          imageHeight: 200
+          imageHeight: 250,
+          image: '/img/home/airTac.png'
         },
         {
           id: 2,
-          title: "Deep Learning Applications in Computer Vision",
-          summary: "A new method for learning complex kernels that accurately model the structure of high-dimensional black-box functions, enabling efficient optimization.",
-          date: "February 2023",
+          title: "mmTAA: Contactless Thoracoabdominal Asynchrony Measurement via mmWave Sensing",
+          summary: "Develops a non-invasive TAA monitoring system using mmWave radar and TAANet, achieving a mean error of 1.56° and MAE of 4.01°, outperforming traditional methods requiring physical contact.",
+          date: "December 2024",
           color: '#e74c3c',
-          imageHeight: 250
+          imageHeight: 200,
+          image: '/img/home/mmtaa.png'
         },
         {
           id: 3,
-          title: "Generative Models for Audio Synthesis",
-          summary: "This tutorial dives into the foundations of generative models like VAEs, GANs, and Diffusion models, explaining key principles and implementation details.",
-          date: "December 2022",
+          title: "mmArrhythmia: Contactless Arrhythmia Detection via mmWave Sensing",
+          summary: "Leverages raw IQ-domain mmWave signals and an encoder-decoder network to detect cardiac anomalies with 97.32% accuracy, addressing label imbalance through multi-channel ensemble learning.",
+          date: "April 2024",
           color: '#2ecc71',
-          imageHeight: 300
+          imageHeight: 300,
+          image: '/img/home/mmArrhythmia.png'
         },
         {
           id: 4,
-          title: "Optimization Techniques in Machine Learning",
-          summary: "A human-centric black-box optimization approach that reveals information about the minimizer function to achieve lower query budgets in complex scenarios.",
-          date: "October 2022",
+          title: "BP3: Cuff-less Blood Pressure Monitoring via mmWave and Physiological Fusion",
+          summary: "Integrates mmWave pulse waves with physiological factors through a Physio-Pulse Attention module, reducing systolic/diastolic errors to -1.57±9.77/-0.34±7.93 mmHg on a 1,012-subject dataset.",
+          date: "December 2024",
           color: '#f39c12',
-          imageHeight: 200
+          imageHeight: 200,
+          image: '/img/home/airBP.png'
         },
         {
           id: 5,
-          title: "Source Separation using Microphone Arrays",
-          summary: "An innovative technique for underdetetermined source separation using microphone arrays that reduces delay aliasing between two interfaces.",
-          date: "August 2022",
+          title: "IoT+ Cross-Disciplinary Innovations: Sensing Technologies for Emerging Applications",
+          summary: "Summarizes key challenges in IoT sensing for interdisciplinary services, covering wireless perception security, human-cyber-physical systems, and AI-driven IoT intrusion detection frameworks.",
+          date: "November 2024",
           color: '#9b59b6',
-          imageHeight: 250
+          imageHeight: 250,
+          image: '/img/home/iot.jpg'
+        },
+        {
+          id: 6,
+          title: "mmStress: Contact-less Stress Monitoring via Millimeter-wave Sensing",
+          summary: "Proposes a novel mmStress system using millimeter-wave radar and neural networks to detect human stress through displacement activities in daily life. Overcomes quasi-static limitations of existing solutions with 83% accuracy validated through 30-day deployment experiments.",
+          date: "October 2023",
+          color: '#3498db',
+          imageHeight: 200,
+          image: '/img/home/mmStress.png' 
+        },
+        {
+          id: 7,
+          title: "Smart Home Control with Millimeter-wave Perception",
+          summary: "Demonstrates a privacy-preserving air conditioning control system using millimeter-wave sensing technology. Awarded Best Creative Design for highlighting non-contact measurement advantages and industrial application potential in smart home scenarios.",
+          date: "April 2024",
+          color: '#e74c3c',
+          imageHeight: 250,
+          image: '/img/home/haier.png'
+        },
+        {
+          id: 8,
+          title: "Contactless Blood Pressure Monitoring via Millimeter-wave Sensing",
+          summary: "Presents medical-engineering crossover research on non-invasive continuous blood pressure measurement. Validated through clinical trials, this approach offers new perspectives for hypertension monitoring and cardiovascular disease prevention.",
+          date: "April 2024",
+          color: '#2ecc71',
+          imageHeight: 300,
+          image: '/img/home/bloodPressure.png'
         }
       ];
       
@@ -200,7 +244,7 @@ export default {
           id: id,
           title: project.title,
           summary: project.summary,
-          image: `https://via.placeholder.com/400x${project.imageHeight}/${project.color.replace('#', '')}`,
+          image: project.image || `https://via.placeholder.com/400x${project.imageHeight}/${project.color.replace('#', '')}`,
           date: project.date,
           visible: false
         });
@@ -236,85 +280,143 @@ export default {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
 .waterfall-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  position: relative;
 }
 
 .waterfall-header h1 {
-  font-size: 28px;
-  color: #333;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.header-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  margin: 0 auto;
+  border-radius: 2px;
 }
 
 .waterfall-wrapper {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .waterfall-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .waterfall-item {
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 0;
   transform: translateY(20px);
+  position: relative;
 }
 
 .waterfall-item.fade-in {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .waterfall-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .waterfall-image {
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .waterfall-image img {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .waterfall-item:hover .waterfall-image img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.waterfall-item:hover .image-overlay {
+  opacity: 1;
+}
+
+.view-details {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 2px solid white;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.view-details:hover {
+  background: white;
+  color: #333;
 }
 
 .waterfall-content {
-  padding: 16px;
+  padding: 20px;
+}
+
+.content-category {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #3498db;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .waterfall-title {
   font-size: 18px;
-  font-weight: 600;
-  margin: 0 0 10px 0;
-  color: #333;
-  line-height: 1.3;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: #1a1a2e;
+  line-height: 1.4;
 }
 
 .waterfall-summary {
   font-size: 14px;
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 16px;
 }
 
 .waterfall-footer {
@@ -322,13 +424,28 @@ export default {
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #eee;
-  padding-top: 12px;
+  padding-top: 16px;
   margin-top: 8px;
 }
 
 .waterfall-date {
-  font-size: 12px;
-  color: #999;
+  font-size: 13px;
+  color: #777;
+  font-weight: 500;
+}
+
+.waterfall-tags {
+  display: flex;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 30px;
+  background-color: #f0f4f8;
+  color: #555;
+  font-weight: 500;
 }
 
 .loading {
@@ -336,18 +453,24 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 0;
+  padding: 40px 0;
   width: 100%;
 }
 
 .loading-spinner {
-  width: 30px;
-  height: 30px;
-  border: 3px solid #f3f3f3;
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(52, 152, 219, 0.1);
   border-top: 3px solid #3498db;
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.loading span {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
 }
 
 @keyframes spin {
@@ -358,11 +481,15 @@ export default {
 /* Responsive styles */
 @media (max-width: 1024px) {
   .waterfall-wrapper {
-    gap: 15px;
+    gap: 20px;
   }
   
   .waterfall-column {
-    gap: 15px;
+    gap: 20px;
+  }
+  
+  .waterfall-header h1 {
+    font-size: 28px;
   }
 }
 
@@ -373,6 +500,14 @@ export default {
   
   .waterfall-column {
     width: 100%;
+  }
+  
+  .waterfall-header {
+    margin-bottom: 30px;
+  }
+  
+  .waterfall-content {
+    padding: 16px;
   }
 }
 </style>
