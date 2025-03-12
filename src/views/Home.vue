@@ -231,7 +231,7 @@ export default {
           date: "April 2024",
           color: '#2ecc71',
           imageHeight: 300,
-          image: '/img/home/bloodPressure.png'
+          image: '/img/home/yixuehui.jpg'
         }
       ];
       

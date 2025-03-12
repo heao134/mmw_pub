@@ -46,7 +46,7 @@ export default {
       members: [
         {
           avatar: '',
-          name: '张教授',
+          name: '尹教授',
           title: '首席研究员',
           education: 'Ph.D in Computer Science',
           researchAreas: ['人工智能', '机器学习']
@@ -81,7 +81,7 @@ export default {
         },
         {
           avatar: '',
-          name: '周研究员',
+          name: '汪研究员',
           title: '助理研究员',
           education: 'Ph.D in AI',
           researchAreas: ['计算机视觉', '自动驾驶']

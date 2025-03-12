@@ -59,24 +59,24 @@ export default {
         // 2025年
       {
         year: 2025,
-        title: "mmTAAC: A Contact-Less Thoracoabdominal Asynchrony Measurement System Based on mmWave Sensing",
+        title: "mmTAA: A Contact-Less Thoracoabdominal Asynchrony Measurement System Based on mmWave Sensing",
         authors: "Fenglin Zhang, Zhebin Zhang, Le Kang, Anfu Zhou, Huadong Ma",
         journal: "IEEE Transactions on Mobile Computing",
         date: "April 2025",
         tags: ["mmWave", "Healthcare"],
         category: ["mmWave", "Healthcare"],
-        url: "#"
+        url: "https://ieeexplore.ieee.org/document/10700839/"
       },
       // 2024年
       {
         year: 2024,
-        title: "mmAmTryhmian: Contactless Arrhythmia Detection via mmWave Sensing",
+        title: "mmArrhythmia: Contactless Arrhythmia Detection via mmWave Sensing",
         authors: "Lanzcheng Zhao, Bui Lyu, Qi Lin, Anfu Zhou, Huazhuan Zhang, Huadong Ma, Jingjia Wang, Chunli Shao, Yida Tang",
         journal: "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
         date: "March 2024",
         tags: ["mmWave", "Cardiology"],
         category: ["mmWave", "Healthcare"],
-        url: "#"
+        url: "https://dl.acm.org/doi/10.1145/3643549"
       },
       {
         year: 2024,
@@ -86,17 +86,17 @@ export default {
         date: "June 2024",
         tags: ["Terahertz", "Material Sensing"],
         category: ["Wireless", "Sensors"],
-        url: "#"
+        url: "https://dl.acm.org/doi/10.1145/3678586"
       },
       {
         year: 2024,
-        title: "AirCGC: Contactless Electrocardiogram for Cardiac Disease Monitoring via mmWave Sensing and Cross-domain Diffusion Model",
+        title: "AirECG: Contactless Electrocardiogram for Cardiac Disease Monitoring via mmWave Sensing and Cross-domain Diffusion Model",
         authors: "Langzheng Zhuo, Bui Lyu, Jiang Liu, Anfu Zhou, Huadong Ma, Jingjia Wang, Xiangbin Meng",
         journal: "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
         date: "September 2024",
         tags: ["AI", "Cardiology"],
         category: ["AI", "Healthcare"],
-        url: "#"
+        url: "https://dl.acm.org/doi/10.1145/3678550"
       },
       {
         year: 2024,
@@ -106,17 +106,17 @@ export default {
         date: "July 2024",
         tags: ["Mobile Sensing", "Biometrics"],
         category: ["Mobile", "Healthcare"],
-        url: "#"
+        url: "https://ieeexplore.ieee.org/document/10342706/"
       },
       {
         year: 2024,
-        title: "TrafficA: Coat-Wave Traffic Adaptation for Maximizing Live Streaming Bitrates",
+        title: "TrafAda: Cost-Aware Traffic Adaptation for Maximizing Live Streaming Bitrates",
         authors: "Yizong Wang, Dong Zhao, Chenghao Huang, Fuyu Yang, Tong Gao, Anfu Zhou, Huazhuan Zhang, Huadong Ma, Yang Du, Aiyan Cheng",
         journal: "IEEE/ACM Transactions on Networking",
         date: "January 2024",
         tags: ["Networking", "QoE"],
         category: ["Networking", "AI"],
-        url: "#"
+        url: "https://ieeexplore.ieee.org/document/10399376"
       },
       {
         year: 2024,
@@ -126,7 +126,7 @@ export default {
         date: "July 2024",
         tags: ["Deep Learning", "QoE"],
         category: ["AI", "Networking"],
-        url: "#"
+        url: "https://ieeexplore.ieee.org/document/10399376/"
       },
       {
         year: 2024,
@@ -136,17 +136,17 @@ export default {
         date: "October 2024",
         tags: ["P2P", "Streaming"],
         category: ["Networking", "AI"],
-        url: "#"
+        url: "https://ieeexplore.ieee.org/document/10480302/"
       },
       {
         year: 2024,
-        title: "mmCarc: Nursing Care Activity Monitoring via mmWave Sensing",
+        title: "mmCare: A Nursing Care Activity Monitoring via mmWave Sensing",
         authors: "Peilin Pan, Fenglin Zhang, Anfu Zhou, Huadong Ma, Huazhuan Jia",
         journal: "ACM Transactions on Ubiquitous Computing",
         date: "2024",
         tags: ["Activity Recognition", "mmWave"],
         category: ["mmWave", "Healthcare"],
-        url: "#"
+        url: "https://dl.acm.org/doi/10.1145/3674399.3674413"
       },
       {
         year: 2024,
@@ -156,17 +156,17 @@ export default {
         date: "December 2024",
         tags: ["Medical Imaging", "AI"],
         category: ["AI", "Healthcare"],
-        url: "#"
+        url: "https://ieeexplore.ieee.org/document/10763653/"
       },
       {
         year: 2024,
-        title: "AnaLive: Automatic Reward Adaptation for Learning-Based Live Streaming",
+        title: "AraLive: Automatic Reward Adaptation for Learning-Based Live Streaming",
         authors: "Huazhuan Zhang, Liu Zhao, Haogian Li, Anfu Zhou, Chuannning Wang, Huadong Ma",
         journal: "ACM Multimedia Conference",
         date: "2024",
         tags: ["Reinforcement Learning", "Streaming"],
         category: ["AI", "Networking"],
-        url: "#"
+        url: "https://dl.acm.org/doi/10.1145/3664647.3681499"
       },
       {
         year: 2024,
@@ -176,17 +176,17 @@ export default {
         date: "2024",
         tags: ["Crowdsourcing", "Optimization"],
         category: ["Networking", "AI"],
-        url: "#"
+        url: "https://dl.acm.org/doi/10.1145/3636534.3649354"
       },
       {
         year: 2024,
-        title: "BPS: Improving Cuffless Blood Pressure Monitoring via mmWave Sensing",
+        title: "BP3: Improving Cuffless Blood Pressure Monitoring via mmWave Sensing",
         authors: "Yuan Zhong, Yumeng Liang, Bui Lyu, Junjie Bao, Yiwen Huang, Anfu Zhou, Huadong Ma, Jingjia Wang, Xiangbin Meng, Chunli Shao, Yida Tang, Yan Zhang",
         journal: "IEEE Sensors Journal",
         date: "2024",
         tags: ["Blood Pressure", "Non-invasive"],
         category: ["Healthcare", "mmWave"],
-        url: "#"
+        url: "https://dl.acm.org/doi/10.1145/3666025.3699370"
       },
       {
         year: 2024,
@@ -196,28 +196,28 @@ export default {
         date: "2024",
         tags: ["Contrastive Learning", "Biometrics"],
         category: ["AI", "Healthcare"],
-        url: "#"
+        url: "https://arxiv.org/abs/2408.08488"
       },
       // 2023年
       {
           year: 2023,
-          title: "FineGrained Access Point Deployment Strategy for 60 GHz MillimeterWave Wireless Networks",
+          title: "FineAP: FineGrained Access Point Deployment Strategy for 60 GHz MillimeterWave Wireless Networks",
           authors: "Yi Yang, Anfu Zhou, Huadong Ma",
           journal: "IEEE Commun. Lett. 27(1): 381-385",
           date: "2023",
           tags: ["Networking", "mmWave"],
           category: ["Networking", "mmWave"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9915601/"
         },
         {
           year: 2023,
-          title: "Midras: Generating mmWave Radar Data from Videos for Training Pervasive and Privacy-preserving Human Sensing Tasks",
+          title: "Midas: Generating mmWave Radar Data from Videos for Training Pervasive and Privacy-preserving Human Sensing Tasks",
           authors: "Kaikai Deng, Dong Zhao, Qiaoyue Han, Zihan Zhang, Shuyue Wang, Anfu Zhou, Huadong Ma",
           journal: "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7(1): 91-926",
           date: "2023",
           tags: ["mmWave", "AI"],
           category: ["mmWave", "AI"],
-          url: "#"
+          url: "https://dl.acm.org/doi/10.1145/3580872"
         },
         {
           year: 2023,
@@ -227,17 +227,17 @@ export default {
           date: "2023",
           tags: ["mmWave", "Healthcare"],
           category: ["mmWave", "Healthcare"],
-          url: "#"
+          url: "https://dl.acm.org/doi/10.1145/3610926"
         },
         {
           year: 2023,
-          title: "Let It Know You Better: User Identification and Emotion Recognition Through Millimeter-Wave Sensing",
+          title: "Let Iot Know You Better: User Identification and Emotion Recognition Through Millimeter-Wave Sensing",
           authors: "Huanpu Yin, Shuhui Yu, Yingshuo Zhang, Anfu Zhou, Xin Wang, Liang Liu, Huadong Ma, Jianhua Liu, Ning Yang",
           journal: "IEEE Internet Things J. 10(2): 1149-1161",
           date: "2023",
           tags: ["mmWave", "AI"],
           category: ["mmWave", "AI"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9878260/"
         },
         {
           year: 2023,
@@ -247,7 +247,7 @@ export default {
           date: "2023",
           tags: ["Healthcare", "Sensors"],
           category: ["Healthcare", "Sensors"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9940441/"
         },
         {
           year: 2023,
@@ -257,7 +257,7 @@ export default {
           date: "2023",
           tags: ["mmWave", "Healthcare"],
           category: ["mmWave", "Healthcare"],
-          url: "#"
+          url: "https://dl.acm.org/doi/10.1145/3614439"
         },
         {
           year: 2023,
@@ -267,7 +267,7 @@ export default {
           date: "2023",
           tags: ["Networking", "AI"],
           category: ["Networking", "AI"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9786839/"
         },
         {
           year: 2023,
@@ -277,7 +277,7 @@ export default {
           date: "2023",
           tags: ["Networking", "AI"],
           category: ["Networking", "AI"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9998491"
         },
         {
           year: 2023,
@@ -287,7 +287,7 @@ export default {
           date: "2023",
           tags: ["mmWave", "Robotics"],
           category: ["mmWave", "Robotics"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9997565/"
         },
         {
           year: 2023,
@@ -297,7 +297,7 @@ export default {
           date: "2023",
           tags: ["Security", "mmWave"],
           category: ["Security", "mmWave"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/10217982/"
         },
         // 2022年
         {
@@ -308,7 +308,7 @@ export default {
           date: "2022",
           tags: ["mmWave", "AI"],
           category: ["mmWave", "AI"],
-          url: "#"
+          url: "https://dl.acm.org/doi/10.1145/3517231"
         },
         {
           year: 2022,
@@ -318,7 +318,7 @@ export default {
           date: "2022",
           tags: ["mmWave", "Robotics"],
           category: ["mmWave", "Robotics"],
-          url: "#"
+          url: "https://dl.acm.org/doi/10.1145/3550298"
         },
         {
           year: 2022,
@@ -328,7 +328,7 @@ export default {
           date: "2022",
           tags: ["mmWave", "AI"],
           category: ["mmWave", "AI"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9490685/"
         },
         {
           year: 2022,
@@ -338,7 +338,7 @@ export default {
           date: "2022",
           tags: ["Networking", "mmWave"],
           category: ["Networking", "mmWave"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9437959/"
         },
         {
           year: 2022,
@@ -348,7 +348,7 @@ export default {
           date: "2022",
           tags: ["Networking", "mmWave"],
           category: ["Networking", "mmWave"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9500055/"
         },
         {
           year: 2022,
@@ -358,7 +358,7 @@ export default {
           date: "2022",
           tags: ["mmWave", "Healthcare"],
           category: ["mmWave", "Healthcare"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/10064421/"
         },
         {
           year: 2022,
@@ -368,7 +368,7 @@ export default {
           date: "2022",
           tags: ["mmWave", "AI"],
           category: ["mmWave", "AI"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/10000673/"
         },
         {
           year: 2022,
@@ -378,17 +378,17 @@ export default {
           date: "2022",
           tags: ["Networking", "AI"],
           category: ["Networking", "AI"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9860000"
         },
         {
           year: 2022,
-          title: "Tuti: coupling 5G NR and mobile edge computing for latency-critical video analytics",
+          title: "Tutii: coupling 5G NR and mobile edge computing for latency-critical video analytics",
           authors: "Dongzhu Xu, Anfu Zhou, Guixian Wang, Huanhuan Zhang, Xiangyu Li, Jialiang Pei, Huadong Ma",
           journal: "MobiCom 2022: 729-742",
           date: "2022",
           tags: ["Networking", "AI"],
           category: ["Networking", "AI"],
-          url: "#"
+          url: "https://dl.acm.org/doi/10.1145/3495243.3560538"
         },
         // 2021年
         {
@@ -399,7 +399,7 @@ export default {
           date: "2021",
           tags: ["mmWave", "Security"],
           category: ["mmWave", "Security"],
-          url: "#"
+          url: "https://link.springer.com/article/10.1007/s42486-021-00067-1"
         },
         {
           year: 2021,
@@ -409,7 +409,7 @@ export default {
           date: "2021",
           tags: ["mmWave", "Sensors"],
           category: ["mmWave", "Sensors"],
-          url: "#"
+          url: "https://dl.acm.org/doi/10.1145/3478075"
         },
         {
           year: 2021,
@@ -419,7 +419,7 @@ export default {
           date: "2021",
           tags: ["Networking", "AI"],
           category: ["Networking", "AI"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9516990/"
         },
         {
           year: 2021,
@@ -429,7 +429,7 @@ export default {
           date: "2021",
           tags: ["Healthcare", "Sensors"],
           category: ["Healthcare", "Sensors"],
-          url: "#"
+          url: "https://link.springer.com/chapter/10.1007/978-981-16-8174-5_9"
         },
         {
           year: 2021,
@@ -439,7 +439,7 @@ export default {
           date: "2021",
           tags: ["mmWave", "AI"],
           category: ["mmWave", "AI"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9414686/"
         },
         {
           year: 2021,
@@ -449,7 +449,7 @@ export default {
           date: "2021",
           tags: ["Networking", "AI"],
           category: ["Networking", "AI"],
-          url: "#"
+          url: "https://dl.acm.org/doi/10.1145/3447993.3483259"
         },
         // 2020年
         {
@@ -460,7 +460,7 @@ export default {
           date: "2020",
           tags: ["AI", "Sensors"],
           category: ["AI", "Sensors"],
-          url: "#"
+          url: "https://dl.acm.org/doi/10.1145/3397334"
         },
         {
           year: 2020,
@@ -470,7 +470,7 @@ export default {
           date: "2020",
           tags: ["mmWave", "AI"],
           category: ["mmWave", "AI"],
-          url: "#"
+          url: "https://dl.acm.org/doi/10.1145/3432235"
         },
         {
           year: 2020,
@@ -480,7 +480,7 @@ export default {
           date: "2020",
           tags: ["Networking", "Robotics"],
           category: ["Networking", "Robotics"],
-          url: "#"
+          url: "https://ieeexplore.ieee.org/document/9096528"
         },
         {
           year: 2020,
@@ -490,7 +490,7 @@ export default {
           date: "2020",
           tags: ["mmWave", "AI"],
           category: ["mmWave", "AI"],
-          url: "#"
+          url: "https://ojs.aaai.org/index.php/AAAI/article/view/5430"
         }
       ]
     }
