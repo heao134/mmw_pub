@@ -163,75 +163,75 @@ export default {
       const projectItems = [
         {
           id: 1,
-          title: "AirTac: Non-Contact Tactile Perception for Material and Roughness via Terahertz Sensing",
-          summary: "Proposes a terahertz-based system using M-Net and R-Net neural networks to decouple material and roughness features, achieving 97.43% accuracy in material classification and 91.46% in fine-grained roughness detection.",
-          date: "November 2024",
-          color: '#3498db',
+          title: "AirTac：基于太赫兹传感的非接触式触觉感知",
+          summary: "提出一种基于太赫兹的系统，利用 M-Net 和 R-Net 神经网络解耦材料与粗糙度特征，在材料分类中达到 97.43% 的准确率，在精细粗糙度检测中达到 91.46%。",
+          date: "2024年11月",
+          color: "#3498db",
           imageHeight: 250,
-          image: '/img/home/airTac.png'
+          image: "/img/home/airTac.png"
         },
         {
           id: 2,
-          title: "mmTAA: Contactless Thoracoabdominal Asynchrony Measurement via mmWave Sensing",
-          summary: "Develops a non-invasive TAA monitoring system using mmWave radar and TAANet, achieving a mean error of 1.56° and MAE of 4.01°, outperforming traditional methods requiring physical contact.",
-          date: "December 2024",
-          color: '#e74c3c',
+          title: "mmTAA：基于毫米波感知的非接触式胸腹异步测量",
+          summary: "开发了一种非侵入式 TAA 监测系统，利用毫米波雷达和 TAANet，在测量角度误差方面达到 1.56° 的均值误差和 4.01° 的 MAE，优于传统需要物理接触的方法。",
+          date: "2024年12月",
+          color: "#e74c3c",
           imageHeight: 200,
-          image: '/img/home/mmtaa.png'
+          image: "/img/home/mmtaa.png"
         },
         {
           id: 3,
-          title: "mmArrhythmia: Contactless Arrhythmia Detection via mmWave Sensing",
-          summary: "Leverages raw IQ-domain mmWave signals and an encoder-decoder network to detect cardiac anomalies with 97.32% accuracy, addressing label imbalance through multi-channel ensemble learning.",
-          date: "April 2024",
-          color: '#2ecc71',
+          title: "mmArrhythmia：基于毫米波感知的非接触式心律失常检测",
+          summary: "利用毫米波 IQ 域原始信号与编码-解码网络检测心脏异常，达到 97.32% 的准确率，并通过多通道集成学习解决标签不平衡问题。",
+          date: "2024年4月",
+          color: "#2ecc71",
           imageHeight: 300,
-          image: '/img/home/mmArrhythmia.png'
+          image: "/img/home/mmArrhythmia.png"
         },
         {
           id: 4,
-          title: "BP3: Cuff-less Blood Pressure Monitoring via mmWave and Physiological Fusion",
-          summary: "Integrates mmWave pulse waves with physiological factors through a Physio-Pulse Attention module, reducing systolic/diastolic errors to -1.57±9.77/-0.34±7.93 mmHg on a 1,012-subject dataset.",
-          date: "December 2024",
-          color: '#f39c12',
+          title: "BP3：基于毫米波与生理融合的无袖带血压监测",
+          summary: "结合毫米波脉搏波与生理因素，通过 Physio-Pulse 注意力模块，将收缩压/舒张压误差降低至 -1.57±9.77/-0.34±7.93 mmHg，并在 1,012 名受试者数据集上进行验证。",
+          date: "2024年12月",
+          color: "#f39c12",
           imageHeight: 200,
-          image: '/img/home/airBP.png'
+          image: "/img/home/airBP.png"
         },
         {
           id: 5,
-          title: "IoT+ Cross-Disciplinary Innovations: Sensing Technologies for Emerging Applications",
-          summary: "Summarizes key challenges in IoT sensing for interdisciplinary services, covering wireless perception security, human-cyber-physical systems, and AI-driven IoT intrusion detection frameworks.",
-          date: "November 2024",
-          color: '#9b59b6',
+          title: "IoT+ 跨学科创新：面向新兴应用的感知技术",
+          summary: "总结物联网感知在跨学科服务中的关键挑战，涵盖无线感知安全、人-网络-物理系统以及 AI 驱动的物联网入侵检测框架。",
+          date: "2024年11月",
+          color: "#9b59b6",
           imageHeight: 250,
-          image: '/img/home/iot.jpg'
+          image: "/img/home/iot.jpg"
         },
         {
           id: 6,
-          title: "mmStress: Contact-less Stress Monitoring via Millimeter-wave Sensing",
-          summary: "Proposes a novel mmStress system using millimeter-wave radar and neural networks to detect human stress through displacement activities in daily life. Overcomes quasi-static limitations of existing solutions with 83% accuracy validated through 30-day deployment experiments.",
-          date: "October 2023",
-          color: '#3498db',
+          title: "mmStress：基于毫米波感知的非接触式压力监测",
+          summary: "提出一种创新的 mmStress 系统，利用毫米波雷达和神经网络，通过日常生活中的位移活动检测人类压力，克服了现有解决方案的准静态限制，准确率达到 83%，并通过 30 天的部署实验验证。",
+          date: "2023年10月",
+          color: "#3498db",
           imageHeight: 200,
-          image: '/img/home/mmStress.png' 
+          image: "/img/home/mmStress.png"
         },
         {
           id: 7,
-          title: "Smart Home Control with Millimeter-wave Perception",
-          summary: "Demonstrates a privacy-preserving air conditioning control system using millimeter-wave sensing technology. Awarded Best Creative Design for highlighting non-contact measurement advantages and industrial application potential in smart home scenarios.",
-          date: "April 2024",
-          color: '#e74c3c',
+          title: "基于毫米波感知的智能家居控制",
+          summary: "展示了一种基于毫米波感知技术的隐私保护空调控制系统。该系统因其非接触式测量优势和智能家居工业应用潜力，荣获最佳创意设计奖。",
+          date: "2024年4月",
+          color: "#e74c3c",
           imageHeight: 250,
-          image: '/img/home/haier.png'
+          image: "/img/home/haier.png"
         },
         {
           id: 8,
-          title: "Contactless Blood Pressure Monitoring via Millimeter-wave Sensing",
-          summary: "Presents medical-engineering crossover research on non-invasive continuous blood pressure measurement. Validated through clinical trials, this approach offers new perspectives for hypertension monitoring and cardiovascular disease prevention.",
-          date: "April 2024",
-          color: '#2ecc71',
+          title: "基于毫米波感知的无接触式血压监测",
+          summary: "提出了一项医工交叉研究，实现非侵入式连续血压测量。该方法通过临床试验验证，为高血压监测和心血管疾病预防提供了新的视角。",
+          date: "2024年4月",
+          color: "#2ecc71",
           imageHeight: 300,
-          image: '/img/home/yixuehui.jpg'
+          image: "/img/home/yixuehui.jpg"
         }
       ];
       
